@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+JP");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Noto Sans JP";
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.8rem;
+}
+
+header {
+  padding: 5.0rem 0 2.5rem;
+  h1{
+    text-align: center;
+  }
+  p{
+    text-align: center;
+  }
+}
+
+#disp_text {
+  padding: 2.5rem 0 0.5rem;
+  h2{
+    text-align: center;
+  }
+  ol{
+    width: 50.0rem;
+    margin: auto;
+    list-style: none;
+    li{
+      width: 100%;
+    }
+  }
+}
+
+#ul {
+  width: 60.0rem;
+  margin: auto;
+  list-style: none;
+  padding: 2.0rem;
+
+  li {
+    display: flex;
+    position: relative;
+    padding: 1.0rem;
+    margin: 0 0 1.0rem;
+    border-radius: 1.0rem;
+    background-color: #ccc;
+    dl {
+      display: flex;
+      dt {
+        width: 20.0rem;
+        padding: 2.0rem;
+      }
+      dd {
+        width: 38.0rem;
+        padding: 2.0rem;
+      }
+    }
+
+    .delete {
+      width: 3.0rem;
+      height: 3.0rem;
+      display: block;
+      position: absolute;
+      right: 0.5rem;
+      top: 0.5rem;
+    }
+  }
+}
+
+#form {
+  padding: 2.5rem 0;
+  width: 50.0rem;
+  margin: auto;
+  P{
+    margin: 0 0 2.0rem;
+    &:after{
+      content:"";
+      display: block;
+      clear: both;
+    }
+    span{
+      padding: 0.8rem;
+      border-radius: 0.8rem;
+      background-color: #ccc;
+    }
+    input{
+      margin-top: -1.0rem;
+      width: 80%;
+      padding: 0.8rem;
+      border-radius: 0.8rem;
+      font-size: 2.0rem;
+      float: right;
+    }
+  }
+  button{
+    width: 100%;
+    padding: 1.0rem;
+    font-size: 2.0rem;
+    border-radius: 0.8rem;
+  }
+}
+
+footer{
+  padding: 2.5rem 0 5.0rem;
+  p{
+    text-align: center;
+  }
+}

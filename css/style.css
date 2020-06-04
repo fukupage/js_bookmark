@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+JP");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-family: "Noto Sans JP";
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.8rem;
+}
+
+header {
+  padding: 5.0rem 0 2.5rem;
+}
+
+header h1 {
+  text-align: center;
+}
+
+header p {
+  text-align: center;
+}
+
+#disp_text {
+  padding: 2.5rem 0 0.5rem;
+}
+
+#disp_text h2 {
+  text-align: center;
+}
+
+#disp_text ol {
+  width: 50.0rem;
+  margin: auto;
+  list-style: none;
+}
+
+#disp_text ol li {
+  width: 100%;
+}
+
+#ul {
+  width: 60.0rem;
+  margin: auto;
+  list-style: none;
+  padding: 2.0rem;
+}
+
+#ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  padding: 1.0rem;
+  margin: 0 0 1.0rem;
+  border-radius: 1.0rem;
+  background-color: #ccc;
+}
+
+#ul li dl {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#ul li dl dt {
+  width: 20.0rem;
+  padding: 2.0rem;
+}
+
+#ul li dl dd {
+  width: 38.0rem;
+  padding: 2.0rem;
+}
+
+#ul li .delete {
+  width: 3.0rem;
+  height: 3.0rem;
+  display: block;
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+}
+
+#form {
+  padding: 2.5rem 0;
+  width: 50.0rem;
+  margin: auto;
+}
+
+#form P {
+  margin: 0 0 2.0rem;
+}
+
+#form P:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+#form P span {
+  padding: 0.8rem;
+  border-radius: 0.8rem;
+  background-color: #ccc;
+}
+
+#form P input {
+  margin-top: -1.0rem;
+  width: 80%;
+  padding: 0.8rem;
+  border-radius: 0.8rem;
+  font-size: 2.0rem;
+  float: right;
+}
+
+#form button {
+  width: 100%;
+  padding: 1.0rem;
+  font-size: 2.0rem;
+  border-radius: 0.8rem;
+}
+
+footer {
+  padding: 2.5rem 0 5.0rem;
+}
+
+footer p {
+  text-align: center;
+}
+/*# sourceMappingURL=style.css.map */

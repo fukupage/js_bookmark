@@ -6,20 +6,16 @@ const form = document.getElementById('form');
 
 (function () {
   for (var key in localStorage) {
-    var html = localStorage.getItem(key);
-    if (html) {
+    var bookmark = localStorage.getItem(key);
+    if (bookmark) {
       ul.innerHTML += localStorage.getItem(key);
-      console.log(html);
-      console.log(key);
     }
   }
 })();
 
-const saveLocalStorage = (site, html) => {
-  if (html) {
-    localStorage.setItem(site, html);
-    console.log(html);
-    console.log(site);
+const saveLocalStorage = (site, bookmark) => {
+  if (bookmark) {
+    localStorage.setItem(site, bookmark);
     return;
   }
   return;
@@ -32,24 +28,23 @@ const deleteBookMark = site => {
 }
 
 const addBookMark = (site, link, text) => {
-  const html = `<li>
+  const bookmark = `<li>
   <dl>
     <dt>
       <a href="${link}" target="_blank">${site}</a>
     </dt>
     <dd>${text}</dd>
   </dl>
-  <span class="delete">[x]</span>
+  <span class="delete"><img src="img/close.svg" alt="閉じる"></span>
   </li>
     `;
-  ul.innerHTML += html;
-  saveLocalStorage(site, html);
+  ul.innerHTML += bookmark;
+  saveLocalStorage(site, bookmark);
 }
 
 ul.addEventListener('click', e => {
   if (e.target.classList.contains('delete')) {
     e.target.parentElement.remove();
-    console.log(e.target);
     const site = e.target.parentElement.firstElementChild.firstElementChild.firstElementChild.textContent.trim();
     deleteBookMark(site);
   }
@@ -64,12 +59,8 @@ submit.addEventListener('click', e => {
   if (site !== '' && link !== '' && text !== '') {
     addBookMark(site, link, text);
     form.reset();
-    console.log(site);
-    console.log(link);
-    console.log(text);
-
   } else {
-    document.write('必要情報を入れてください。');
+    alert('必要情報を入れてください。');
   }
 });
 
