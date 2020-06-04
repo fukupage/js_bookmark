@@ -13,47 +13,56 @@
     <h1>ブックマーカー</h1>
     <p>気に入ったページをサクッとブックマーク！</p>
   </header>
+  <nav>
+    <div data-id="home" class="active">ホーム</div>
+    <div data-id="post">登録</div>
+    <div data-id="search">検索</div>
+  </nav>
   <main>
-    <div id="disp_text">
-      <h2>使い方</h2>
-      <ol>
-        <li>気に入ったページのURLを「リンク先」のところにコピペ。</li>
-        <li>サイト名は、自分の覚えている名前を適当に入力。</li>
-        <li>コメントは、自分の適当なメモを入力。</li>
-      </ol>
+    <div id="home" class="active content">
+      <div id="app" class="container">
+        <ul id="ul">
+        </ul>
+      </div>
     </div>
-    <div id="app" class="container">
-      <ul id="ul">
-        <li>
-          <dl>
-            <dt>
-              <a href="#" target="_blank">ほげほげ</a>
-            </dt>
-            <dd>
-                せつめいせつめいせつめい
-            </dd>
-          </dl>
-          <span class="delete"><img src="img/close.svg" alt="閉じる"></span>
-        </li>
+    <div id="post" class="content">
+      <div id="disp_text">
+        <h2>使い方</h2>
+        <ol>
+          <li>気に入ったページのURLを「リンク先」のところにコピペ。</li>
+          <li>サイト名は、自分の覚えている名前を適当に入力。</li>
+          <li>コメントは、自分の適当なメモを入力。</li>
+        </ol>
+      </div>
+      <form id="form">
+        <p>
+          <span>サイト名</span><input type="text" name="site">
+        </p>
+        <P>
+          <span>リンク先</span><input type="text" name="link">
+        </P>
+        <p>
+          <span>コメント</span><input type="text" name="text">
+        </p>
+        <button id="submit">登録</button>
+      </form>
+    </div>
+    <div id="search" class="content">
+      <div id="search_text">
+        <h2>使い方</h2>
+        <ol>
+          <li>下の検索枠に、思いついたキーワードを入力してください。</li>
+        </ol>
+      </div>
+      <ul id="search_ul">
+
       </ul>
     </div>
-    <form id="form">
-      <p>
-        <span>サイト名</span><input type="text" name="site">
-      </p>
-      <P>
-        <span>リンク先</span><input type="text" name="link">
-      </P>
-      <p>
-        <span>コメント</span><input type="text" name="text">
-      </p>
-      <button id="submit">登録</button>
-    </form>
   </main>
   <footer>
     <p>&copy; BowWorks</p>
   </footer>
-  <!-- <script src="js/test.js"></script> -->
+  <script src="js/jquery.js"></script>
   <script src="js/script.js"></script>
 </body>
 

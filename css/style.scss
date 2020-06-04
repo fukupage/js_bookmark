@@ -3,7 +3,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box!important;
 }
 
 html {
@@ -24,6 +24,46 @@ header {
     text-align: center;
   }
 }
+
+nav{
+  width: 60.0rem;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  div{
+    width: 30%;
+    padding: 1.0rem;
+    border: none;
+    border-radius: 2.5rem;
+    background-color: #ccc;
+    box-shadow: 0.3rem 0.3rem 0.3rem #999;
+    font-size: 1.8rem;
+    opacity: 0.5;
+    text-align: center;
+    &:hover{
+      opacity: 0.8;
+    }
+
+    &:active{
+      border: none;
+    }
+
+    .active{
+      opacity: 1.0;
+    }
+  }
+}
+
+#home,#post,#search{
+  display: none;
+}
+
+#home.active,#post.active,#search.active{
+  display: block;
+}
+
+
+
 
 #disp_text {
   padding: 2.5rem 0 0.5rem;
@@ -56,7 +96,7 @@ header {
     dl {
       display: flex;
       dt {
-        width: 20.0rem;
+        width: 16.0rem;
         padding: 2.0rem;
       }
       dd {
@@ -115,3 +155,5 @@ footer{
     text-align: center;
   }
 }
+
+

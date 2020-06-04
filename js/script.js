@@ -3,6 +3,9 @@ const submit = document.getElementById('submit');
 const app = document.getElementById('app');
 const ul = document.querySelector('ul');
 const form = document.getElementById('form');
+const menuItems = document.querySelectorAll('nav div');
+const contents = document.querySelectorAll('.content');
+
 
 (function () {
   for (var key in localStorage) {
@@ -64,5 +67,18 @@ submit.addEventListener('click', e => {
   }
 });
 
+menuItems.forEach(clickedItem => {
+  clickedItem.addEventListener('click', e => {
+    e.preventDefault();
+    menuItems.forEach(item => {
+      item.classList.remove('active');
+    });
+    clickedItem.classList.add('active');
 
+    contents.forEach(contents => {
+      contents.classList.remove('active');
+    });
+    document.getElementById(clickedItem.dataset.id).classList.add('active');
+  });
+});
 
