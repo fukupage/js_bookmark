@@ -1,12 +1,15 @@
 'use strict';
+//定数の宣言  ----------------------------------------------------------
 const submit = document.getElementById('submit');
 const app = document.getElementById('app');
 const ul = document.querySelector('ul');
 const form = document.getElementById('form');
 const menuItems = document.querySelectorAll('nav div');
 const contents = document.querySelectorAll('.content');
+const search = document.querySelector('#searchF');
+console.log(search);
 
-
+//即時関数（基本動作）  ----------------------------------------------------------
 (function () {
   for (var key in localStorage) {
     var bookmark = localStorage.getItem(key);
@@ -16,6 +19,7 @@ const contents = document.querySelectorAll('.content');
   }
 })();
 
+//ブックマークの保存  ----------------------------------------------------------
 const saveLocalStorage = (site, bookmark) => {
   if (bookmark) {
     localStorage.setItem(site, bookmark);
@@ -23,13 +27,14 @@ const saveLocalStorage = (site, bookmark) => {
   }
   return;
 }
-
+//ブックマークの削除  ----------------------------------------------------------
 const deleteBookMark = site => {
   localStorage.removeItem(site);
   console.log(site);
   return;
 }
 
+//ブックマークの追加  ----------------------------------------------------------
 const addBookMark = (site, link, text) => {
   const bookmark = `<li>
   <dl>
@@ -45,6 +50,7 @@ const addBookMark = (site, link, text) => {
   saveLocalStorage(site, bookmark);
 }
 
+//削除ボタン（x画像）  ----------------------------------------------------------
 ul.addEventListener('click', e => {
   if (e.target.classList.contains('delete')) {
     e.target.parentElement.remove();
@@ -53,7 +59,7 @@ ul.addEventListener('click', e => {
   }
 });
 
-
+//登録ボタン  ----------------------------------------------------------
 submit.addEventListener('click', e => {
   e.preventDefault();
   const site = form.site.value.trim();
@@ -67,6 +73,21 @@ submit.addEventListener('click', e => {
   }
 });
 
+//検索機能  ----------------------------------------------------------
+const filterBookMark = (site, bookmark) => {
+  Array.form(ul.children)
+    //フィルター条件
+    .filter((mark) => !mark.textContent.toLowerCase().includes(site, bookmark))
+    .forEach((mark) => mark.classList.add('filtered'));
+
+  Array.form(ul.children)
+    //フィルター条件
+    .filter((mark) => mark.textContent.toLowerCase().includes(site, bookmark))
+    .forEach((mark) => mark.classList.add('filtered'));
+};
+
+
+//SPA風の画面遷移  ----------------------------------------------------------
 menuItems.forEach(clickedItem => {
   clickedItem.addEventListener('click', e => {
     e.preventDefault();
@@ -81,4 +102,5 @@ menuItems.forEach(clickedItem => {
     document.getElementById(clickedItem.dataset.id).classList.add('active');
   });
 });
+
 

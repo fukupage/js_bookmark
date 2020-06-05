@@ -58,20 +58,28 @@ nav div:active {
   border: none;
 }
 
-nav div .active {
+nav div.active {
   opacity: 1.0;
 }
 
-#home, #post, #search {
+#home,
+#post,
+#search {
   display: none;
 }
 
-#home.active, #post.active, #search.active {
+#home.active,
+#post.active,
+#search.active {
   display: block;
 }
 
 #disp_text {
-  padding: 2.5rem 0 0.5rem;
+  padding: 2.0rem 0 0.5rem;
+  background-color: #ccc;
+  margin: 2.0rem auto;
+  width: 56.0rem;
+  border-radius: 0.8rem;
 }
 
 #disp_text h2 {
@@ -169,11 +177,53 @@ nav div .active {
   border-radius: 0.8rem;
 }
 
+#search {
+  width: 60.0rem;
+  margin: 1.0rem auto;
+  padding: 1.0rem 2.0rem;
+}
+
+#search #search_text {
+  border-radius: 1.0rem;
+  background-color: #ccc;
+  padding: 2.0rem;
+}
+
+#search #search_text h2 {
+  text-align: center;
+}
+
+#search #search_text ol {
+  list-style: none;
+  padding: 0;
+}
+
+#search #search_text ol li {
+  text-align: center;
+}
+
+#search #search_text #searchF {
+  width: 80%;
+  padding: 0.8rem;
+  border-radius: 0.8rem;
+  font-size: 2.0rem;
+  margin: 2.0rem auto;
+  display: block;
+}
+
+#search #search_text #search_ul {
+  width: 60.0rem;
+}
+
 footer {
   padding: 2.5rem 0 5.0rem;
 }
 
 footer p {
   text-align: center;
+}
+
+input[type="text"]:focus-ring {
+  outline: none;
 }
 /*# sourceMappingURL=style.css.map */

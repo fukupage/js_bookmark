@@ -3,7 +3,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box!important;
+  box-sizing: border-box !important;
 }
 
 html {
@@ -17,20 +17,23 @@ body {
 
 header {
   padding: 5.0rem 0 2.5rem;
-  h1{
+
+  h1 {
     text-align: center;
   }
-  p{
+
+  p {
     text-align: center;
   }
 }
 
-nav{
+nav {
   width: 60.0rem;
   margin: auto;
   display: flex;
   justify-content: space-around;
-  div{
+
+  div {
     width: 30%;
     padding: 1.0rem;
     border: none;
@@ -40,41 +43,50 @@ nav{
     font-size: 1.8rem;
     opacity: 0.5;
     text-align: center;
-    &:hover{
+
+    &:hover {
       opacity: 0.8;
     }
 
-    &:active{
+    &:active {
       border: none;
     }
 
-    .active{
+    &.active {
       opacity: 1.0;
     }
   }
 }
 
-#home,#post,#search{
+#home,
+#post,
+#search {
   display: none;
 }
 
-#home.active,#post.active,#search.active{
+#home.active,
+#post.active,
+#search.active {
   display: block;
 }
 
-
-
-
 #disp_text {
-  padding: 2.5rem 0 0.5rem;
-  h2{
+  padding: 2.0rem 0 0.5rem;
+  background-color: #ccc;
+  margin: 2.0rem auto;
+  width: 56.0rem;
+  border-radius: 0.8rem;
+
+  h2 {
     text-align: center;
   }
-  ol{
+
+  ol {
     width: 50.0rem;
     margin: auto;
     list-style: none;
-    li{
+
+    li {
       width: 100%;
     }
   }
@@ -93,12 +105,15 @@ nav{
     margin: 0 0 1.0rem;
     border-radius: 1.0rem;
     background-color: #ccc;
+
     dl {
       display: flex;
+
       dt {
         width: 16.0rem;
         padding: 2.0rem;
       }
+
       dd {
         width: 38.0rem;
         padding: 2.0rem;
@@ -120,19 +135,23 @@ nav{
   padding: 2.5rem 0;
   width: 50.0rem;
   margin: auto;
-  P{
+
+  P {
     margin: 0 0 2.0rem;
-    &:after{
-      content:"";
+
+    &:after {
+      content: "";
       display: block;
       clear: both;
     }
-    span{
+
+    span {
       padding: 0.8rem;
       border-radius: 0.8rem;
       background-color: #ccc;
     }
-    input{
+
+    input {
       margin-top: -1.0rem;
       width: 80%;
       padding: 0.8rem;
@@ -141,7 +160,8 @@ nav{
       float: right;
     }
   }
-  button{
+
+  button {
     width: 100%;
     padding: 1.0rem;
     font-size: 2.0rem;
@@ -149,11 +169,48 @@ nav{
   }
 }
 
-footer{
-  padding: 2.5rem 0 5.0rem;
-  p{
-    text-align: center;
+#search {
+  width: 60.0rem;
+  margin: 1.0rem auto;
+  padding: 1.0rem 2.0rem;
+  #search_text {
+    border-radius: 1.0rem;
+    background-color: #ccc;
+    padding: 2.0rem;
+    h2 {
+      text-align: center;
+    }
+    ol {
+      list-style: none;
+      padding: 0;
+      li {
+        text-align: center;
+      }
+    }
+    #searchF{
+      width: 80%;
+      padding: 0.8rem;
+      border-radius: 0.8rem;
+      font-size: 2.0rem;
+      margin: 2.0rem auto;
+      display: block;
+    }
+
+    #search_ul {
+      width: 60.0rem;
+    }
   }
 }
 
 
+footer {
+  padding: 2.5rem 0 5.0rem;
+
+  p {
+    text-align: center;
+  }
+}
+
+input[type="text"]:focus-ring{
+  outline: none;
+}

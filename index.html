@@ -27,32 +27,35 @@
     </div>
     <div id="post" class="content">
       <div id="disp_text">
-        <h2>使い方</h2>
+        <h2>登録方法</h2>
         <ol>
           <li>気に入ったページのURLを「リンク先」のところにコピペ。</li>
           <li>サイト名は、自分の覚えている名前を適当に入力。</li>
           <li>コメントは、自分の適当なメモを入力。</li>
         </ol>
+        <form id="form">
+          <p>
+            <span>サイト名</span><input type="text" name="site">
+          </p>
+          <P>
+            <span>リンク先</span><input type="text" name="link">
+          </P>
+          <p>
+            <span>コメント</span><input type="text" name="text">
+          </p>
+          <button id="submit">登録</button>
+        </form>
       </div>
-      <form id="form">
-        <p>
-          <span>サイト名</span><input type="text" name="site">
-        </p>
-        <P>
-          <span>リンク先</span><input type="text" name="link">
-        </P>
-        <p>
-          <span>コメント</span><input type="text" name="text">
-        </p>
-        <button id="submit">登録</button>
-      </form>
     </div>
     <div id="search" class="content">
       <div id="search_text">
-        <h2>使い方</h2>
+        <h2>検索方法</h2>
         <ol>
           <li>下の検索枠に、思いついたキーワードを入力してください。</li>
         </ol>
+        <form>
+          <input type="text" name="searchF" id="searchF">
+        </form>
       </div>
       <ul id="search_ul">
 
