@@ -2,12 +2,11 @@
 //定数の宣言  ----------------------------------------------------------
 const submit = document.getElementById('submit');
 const app = document.getElementById('app');
-const ul = document.querySelector('ul');
+const ul = document.querySelector('#ul');
 const form = document.getElementById('form');
 const menuItems = document.querySelectorAll('nav div');
 const contents = document.querySelectorAll('.content');
-const search = document.querySelector('#searchF');
-console.log(search);
+// const search = document.querySelector('#searchF');
 
 //即時関数（基本動作）  ----------------------------------------------------------
 (function () {
@@ -27,31 +26,33 @@ const saveLocalStorage = (site, bookmark) => {
   }
   return;
 }
-//ブックマークの削除  ----------------------------------------------------------
-const deleteBookMark = site => {
-  localStorage.removeItem(site);
-  console.log(site);
-  return;
-}
+
 
 //ブックマークの追加  ----------------------------------------------------------
 const addBookMark = (site, link, text) => {
   const bookmark = `<li>
   <dl>
-    <dt>
-      <a href="${link}" target="_blank">${site}</a>
-    </dt>
-    <dd>${text}</dd>
+  <dt>
+  <a href="${link}" target="_blank">${site}</a>
+  </dt>
+  <dd>${text}</dd>
   </dl>
-  <span class="delete"><img src="img/close.svg" alt="閉じる"></span>
+  <span class="delete"></span>
   </li>
-    `;
+  `;
   ul.innerHTML += bookmark;
   saveLocalStorage(site, bookmark);
 }
 
+//ブックマークの削除  ----------------------------------------------------------
+const deleteBookMark = site => {
+  localStorage.removeItem(site);
+  return;
+}
+
 //削除ボタン（x画像）  ----------------------------------------------------------
 ul.addEventListener('click', e => {
+  console.log(e.target);
   if (e.target.classList.contains('delete')) {
     e.target.parentElement.remove();
     const site = e.target.parentElement.firstElementChild.firstElementChild.firstElementChild.textContent.trim();
@@ -73,6 +74,7 @@ submit.addEventListener('click', e => {
   }
 });
 
+/*
 //検索機能  ----------------------------------------------------------
 const filterBookMark = (site, bookmark) => {
   Array.form(ul.children)
@@ -85,7 +87,7 @@ const filterBookMark = (site, bookmark) => {
     .filter((mark) => mark.textContent.toLowerCase().includes(site, bookmark))
     .forEach((mark) => mark.classList.add('filtered'));
 };
-
+*/
 
 //SPA風の画面遷移  ----------------------------------------------------------
 menuItems.forEach(clickedItem => {

@@ -137,6 +137,8 @@ nav div.active {
   position: absolute;
   right: 0.5rem;
   top: 0.5rem;
+  cursor: pointer;
+  background: url(../img/close.svg) no-repeat center center;
 }
 
 #form {
