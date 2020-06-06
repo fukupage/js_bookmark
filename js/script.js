@@ -53,9 +53,12 @@ const deleteBookMark = site => {
 //削除ボタン（x画像）  ----------------------------------------------------------
 ul.addEventListener('click', e => {
   console.log(e.target);
+  console.log(e.target.querySelector('li'));
+  console.log(e.target.parentElement.querySelector('dl dt a'));
   if (e.target.classList.contains('delete')) {
     e.target.parentElement.remove();
-    const site = e.target.parentElement.firstElementChild.firstElementChild.firstElementChild.textContent.trim();
+//    const site = e.target.parentElement.firstElementChild.firstElementChild.firstElementChild.textContent.trim();
+    const site = e.target.parentElement.querySelector('dl dt a').textContent.trim();
     deleteBookMark(site);
   }
 });
